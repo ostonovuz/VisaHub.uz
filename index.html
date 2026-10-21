@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VisaHub.uz — viza bo'yicha maslahat va hujjatlar tayyorlash</title>
+<meta name="description" content="Shengen, Yaponiya, Singapur, Turkiya va boshqa davlatlar vizasi: hujjatlar ro'yxati, anketa, sayohat rejasi va topshirishda yordam. Toshkent.">
+<style>
+:root{
+  --ink:#12263f; --paper:#f3f7f5; --white:#fff; --stamp:#b8322f; --muted:#4a5866; --line:#cfdad5; --accent:#1d5c4a;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --ink:#e8eef5; --paper:#0f1a24; --white:#16232f; --stamp:#e5625e; --muted:#a6b4c2; --line:#2a3b49; --accent:#6fcfb0; color-scheme: dark; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(2rem,6vw,3.4rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.5rem,4vw,2.1rem)}
+h3{font-size:1.15rem}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px}
 
+header{padding:14px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-family:Georgia,serif;font-weight:700;font-size:1.25rem;text-decoration:none}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:600}
+.btn:hover{opacity:.88}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+
+.hero{padding:48px 0 64px;border-top:0}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.stamp{justify-self:center;width:230px;height:230px;border:5px double var(--stamp);border-radius:50%;color:var(--stamp);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-9deg);font-family:Georgia,serif;opacity:.92}
+.stamp b{font-size:1.7rem;letter-spacing:.02em}
+.stamp span{font-size:.95rem;border-top:2px solid var(--stamp);border-bottom:2px solid var(--stamp);margin:6px 0;padding:3px 14px}
+.stamp small{font-size:.85rem}
+
+.group{margin-bottom:22px}
+.group h3{color:var(--accent);margin-bottom:.4em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.chips li{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:6px 16px}
+.note{color:var(--muted);font-size:.95rem}
+
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:20px}
+.steps li::before{content:counter(s);display:block;font-family:Georgia,serif;font-size:2rem;color:var(--stamp);line-height:1;margin-bottom:8px}
+.steps h3{margin-bottom:.3em}
+.steps p{margin:0;color:var(--muted);font-size:.97rem}
+
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;padding:0;margin:0;list-style:none}
+.services li{padding:12px 0 12px 26px;border-bottom:1px solid var(--line);position:relative}
+.services li::before{content:"";position:absolute;left:0;top:21px;width:12px;height:7px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg)}
+
+details{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--muted)}
+
+.contact{text-align:center}
+.contact p{max-width:34em;margin-left:auto;margin-right:auto;color:var(--muted)}
+.contact .cta{justify-content:center}
+footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.9rem}
+
+@media (max-width:720px){
+  .hero .wrap{grid-template-columns:1fr}
+  .stamp{width:170px;height:170px;order:-1;justify-self:start}
+  .stamp b{font-size:1.25rem}
+  section{padding:40px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">VisaHub.uz</a>
+    <a class="btn" data-tg href="#kontakt">Telegramda yozish</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Viza uchun hujjatlaringizni to'g'ri va to'liq tayyorlaymiz</h1>
+      <p class="lead">Qaysi hujjat kerakligini, qayerga va qachon topshirishni tushuntiramiz. Anketa, sayohat rejasi va bron hujjatlarini tayyorlashda yordam beramiz.</p>
+      <div class="cta">
+        <a class="btn" data-tg href="#kontakt">Bepul maslahat olish</a>
+        <a class="btn alt" href="#davlatlar">Davlatlar ro'yxati</a>
+      </div>
+    </div>
+    <div class="stamp" aria-hidden="true">
+      <small>TOSHKENT</small>
+      <span>VISA</span>
+      <b>VisaHub.uz</b>
+    </div>
+  </div>
+</section>
+
+<section id="davlatlar">
+  <div class="wrap">
+    <h2>Qaysi davlatlar bo'yicha yordam beramiz</h2>
+    <div class="group">
+      <h3>Shengen hududi</h3>
+      <ul class="chips">
+        <li>Vengriya</li><li>Ispaniya</li><li>Litva</li><li>Polsha</li><li>Gretsiya</li><li>Belgiya</li><li>Boshqa Shengen davlatlari</li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Osiyo</h3>
+      <ul class="chips">
+        <li>Singapur</li><li>Yaponiya</li><li>Vetnam</li><li>Xitoy</li><li>Gonkong</li><li>Hindiston</li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Boshqa yo'nalishlar</h3>
+      <ul class="chips">
+        <li>Turkiya</li><li>Marokash</li><li>Tanzaniya</li>
+      </ul>
+    </div>
+    <p class="note">Ro'yxatda yo'q davlat kerak bo'lsa, Telegramda so'rang.</p>
+  </div>
+</section>
+
+<section id="jarayon">
+  <div class="wrap">
+    <h2>Ish tartibi</h2>
+    <ol class="steps">
+      <li><h3>Siz yozasiz</h3><p>Qaysi davlatga, qachon va nima maqsadda borishingizni aytasiz.</p></li>
+      <li><h3>Hujjatlar ro'yxati</h3><p>Sizning holatingizga mos hujjatlar ro'yxatini beramiz.</p></li>
+      <li><h3>Tayyorlash</h3><p>Anketa, sayohat rejasi va bron hujjatlarini birga tayyorlaymiz va tekshiramiz.</p></li>
+      <li><h3>Topshirish</h3><p>Topshirish uchun yozilish va keyingi qadamlarni tushuntiramiz.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="xizmatlar">
+  <div class="wrap">
+    <h2>Nimalarda yordam beramiz</h2>
+    <ul class="services">
+      <li>Viza turi va talablar bo'yicha maslahat</li>
+      <li>Hujjatlar ro'yxati va ularni tekshirish</li>
+      <li>Viza anketasini to'ldirish</li>
+      <li>Sayohat rejasi (itinerary) tayyorlash</li>
+      <li>Mehmonxona va transport bron hujjatlari</li>
+      <li>Topshirish uchun yozilishda yordam</li>
+    </ul>
+    <p class="note" style="margin-top:18px">Viza berish yoki bermaslik haqidagi qaror elchixona va konsullik qo'lida. Biz hujjatlaringiz talabga to'g'ri kelishiga yordam beramiz.</p>
+  </div>
+</section>
+
+<section id="savollar">
+  <div class="wrap">
+    <h2>Ko'p so'raladigan savollar</h2>
+    <details>
+      <summary>Xizmat narxi qancha?</summary>
+      <p>Narx davlatga, viza turiga va kerakli hujjatlar hajmiga qarab belgilanadi. Aniq narxni bilish uchun Telegramda yozing.</p>
+    </details>
+    <details>
+      <summary>Hujjatlar qancha vaqtda tayyor bo'ladi?</summary>
+      <p>Hujjatlar to'liq berilgan bo'lsa, odatda bir necha kun ichida. Muddat davlat va holatga qarab farq qiladi.</p>
+    </details>
+    <details>
+      <summary>Viza berilishiga kafolat bormi?</summary>
+      <p>Yo'q. Qaror elchixona tomonidan qabul qilinadi. Hech kim vizani kafolatlay olmaydi. Biz hujjatlarni to'g'ri tayyorlashga yordam beramiz.</p>
+    </details>
+    <details>
+      <summary>Boshlash uchun nima kerak?</summary>
+      <p>Qaysi davlatga borishingiz, taxminiy sana va pasportingiz amal qilish muddati haqidagi ma'lumot yetarli.</p>
+    </details>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <h2>Savolingiz bormi?</h2>
+    <p>Davlat va sanani yozing, qaysi hujjatlar kerakligini aytamiz.</p>
+    <div class="cta">
+      <a class="btn" data-tg href="#kontakt">Telegramda yozish</a>
+      <a class="btn alt" data-phone href="#kontakt">Qo'ng'iroq qilish</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© VisaHub.uz, Toshkent</div>
+</footer>
+
+<script>
+  /* ====== SHU YERNI O'ZGARTIRING ====== */
+  var TELEGRAM = "ostonov_uz";        // Telegram username, @ belgisisiz. Masalan: "visahub_uz"
+  var PHONE    = "+998918257205";   // Telefon raqamingiz, +998 bilan
+  /* ==================================== */
+
+  document.querySelectorAll("[data-tg]").forEach(function(a){
+    a.href = "https://t.me/" + TELEGRAM;
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  document.querySelectorAll("[data-phone]").forEach(function(a){
+    a.href = "tel:" + PHONE;
+  });
+</script>
+</body>
+</html>

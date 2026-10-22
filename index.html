@@ -89,16 +89,24 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
   .cards{grid-template-columns:repeat(2,1fr)}
   .card{min-height:170px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.card .bg{transition:none}.card:hover{transform:none}.card:hover .bg{transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.card .bg{transition:none}.card:hover{transform:none}.card:hover .bg{transform:none}} 
+
+  .hr{display:flex;align-items:center;gap:10px}
+select{font:inherit;font-size:.9rem;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer}
+.stamp small{text-transform:uppercase}
+.card .flag.code{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.92);color:#12263f;font:700 .75rem system-ui;box-shadow:none}
+html[lang=hi] body{line-height:1.8}
+html[lang=hi] h1,html[lang=hi] h2,html[lang=hi] h3{line-height:1.45}
+@media (max-width:560px){.hr .btn{display:none}}
 </style>
 </head>
 <body>
-
+  
 <header>
   <div class="wrap">
     <a class="logo" href="#">VisaHub.uz</a>
-    <nav><a href="#davlatlar">Davlatlar</a><a href="#jarayon">Ish tartibi</a><a href="#xizmatlar">Xizmatlar</a><a href="#savollar">Savollar</a></nav>
-    <a class="btn" data-tg href="#kontakt">Telegramda yozish</a>
+    <nav><a href="#davlatlar" data-i="n1"></a><a href="#jarayon" data-i="n2"></a><a href="#xizmatlar" data-i="n3"></a><a href="#savollar" data-i="n4"></a></nav>
+    <div class="hr"><select id="lang" aria-label="Language"></select><a class="btn" data-tg data-i="tg" href="#kontakt"></a></div>
   </div>
 </header>
 
@@ -106,79 +114,74 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
 <section class="hero">
   <div class="wrap">
     <div>
-      <h1>Viza uchun hujjatlaringizni to'g'ri va to'liq tayyorlaymiz</h1>
-      <p class="lead">Qaysi hujjat kerakligini, qayerga va qachon topshirishni tushuntiramiz. Anketa, sayohat rejasi va bron hujjatlarini tayyorlashda yordam beramiz.</p>
+      <h1 data-i="h1"></h1>
+      <p class="lead" data-i="lead"></p>
       <div class="cta">
-        <a class="btn" data-tg href="#kontakt">Bepul maslahat olish</a>
-        <a class="btn alt" href="#davlatlar">Davlatlar ro'yxati</a>
+        <a class="btn" data-tg data-i="cta1" href="#kontakt"></a>
+        <a class="btn alt" data-i="cta2" href="#davlatlar"></a>
       </div>
     </div>
-    <div class="stamp" aria-hidden="true"><small>TOSHKENT</small><span>VISA</span><b>VisaHub.uz</b></div>
+    <div class="stamp" aria-hidden="true"><small data-i="city"></small><span>VISA</span><b>VisaHub.uz</b></div>
   </div>
 </section>
 
 <section id="davlatlar">
   <div class="wrap">
-    <h2>Qaysi davlat vizasi kerak?</h2>
-    <p class="note">Davlatni bosing, Telegramda tayyor xabar ochiladi.</p>
+    <h2 data-i="h2c"></h2>
+    <p class="note" data-i="note1"></p>
     <div id="groups"></div>
-    <p class="note" style="margin-top:22px">Ro'yxatda yo'q davlat kerak bo'lsa, Telegramda so'rang.</p>
+    <p class="note" style="margin-top:22px" data-i="note2"></p>
   </div>
 </section>
 
 <section id="jarayon">
   <div class="wrap">
-    <h2>Ish tartibi</h2>
+    <h2 data-i="h2p"></h2>
     <ol class="steps">
-      <li><h3>Siz yozasiz</h3><p>Qaysi davlatga, qachon va nima maqsadda borishingizni aytasiz.</p></li>
-      <li><h3>Hujjatlar ro'yxati</h3><p>Sizning holatingizga mos hujjatlar ro'yxatini beramiz.</p></li>
-      <li><h3>Tayyorlash</h3><p>Anketa, sayohat rejasi va bron hujjatlarini birga tayyorlaymiz va tekshiramiz.</p></li>
-      <li><h3>Topshirish</h3><p>Topshirish uchun yozilish va keyingi qadamlarni tushuntiramiz.</p></li>
+      <li><h3 data-i="s1t"></h3><p data-i="s1p"></p></li>
+      <li><h3 data-i="s2t"></h3><p data-i="s2p"></p></li>
+      <li><h3 data-i="s3t"></h3><p data-i="s3p"></p></li>
+      <li><h3 data-i="s4t"></h3><p data-i="s4p"></p></li>
     </ol>
   </div>
 </section>
 
 <section id="xizmatlar">
   <div class="wrap">
-    <h2>Nimalarda yordam beramiz</h2>
+    <h2 data-i="h2s"></h2>
     <ul class="services">
-      <li>Viza turi va talablar bo'yicha maslahat</li>
-      <li>Hujjatlar ro'yxati va ularni tekshirish</li>
-      <li>Viza anketasini to'ldirish</li>
-      <li>Sayohat rejasi (itinerary) tayyorlash</li>
-      <li>Mehmonxona va transport bron hujjatlari</li>
-      <li>Topshirish uchun yozilishda yordam</li>
+      <li data-i="sv1"></li><li data-i="sv2"></li><li data-i="sv3"></li>
+      <li data-i="sv4"></li><li data-i="sv5"></li><li data-i="sv6"></li>
     </ul>
-    <p class="note" style="margin-top:18px">Viza berish yoki bermaslik haqidagi qaror elchixona va konsullik qo'lida. Biz hujjatlaringiz talabga to'g'ri kelishiga yordam beramiz.</p>
+    <p class="note" style="margin-top:18px" data-i="disc"></p>
   </div>
 </section>
 
 <section id="savollar">
   <div class="wrap">
-    <h2>Ko'p so'raladigan savollar</h2>
-    <details><summary>Maslahat pulikmi?</summary><p>Dastlabki savollaringizga Telegramda javob beramiz. Xizmat narxi davlatga va hujjatlar hajmiga qarab belgilanadi.</p></details>
-    <details><summary>Xizmat narxi qancha?</summary><p>Narx davlatga, viza turiga va kerakli hujjatlar hajmiga qarab belgilanadi. Aniq narxni bilish uchun Telegramda yozing.</p></details>
-    <details><summary>Hujjatlar qancha vaqtda tayyor bo'ladi?</summary><p>Hujjatlar to'liq berilgan bo'lsa, odatda bir necha kun ichida. Muddat davlat va holatga qarab farq qiladi.</p></details>
-    <details><summary>Viza berilishiga kafolat bormi?</summary><p>Yo'q. Qaror elchixona tomonidan qabul qilinadi. Hech kim vizani kafolatlay olmaydi. Biz hujjatlarni to'g'ri tayyorlashga yordam beramiz.</p></details>
-    <details><summary>Boshqa shahardan ham murojaat qilsam bo'ladimi?</summary><p>Ha, aloqa Telegram orqali bo'lgani uchun istalgan joydan yozishingiz mumkin.</p></details>
+    <h2 data-i="h2f"></h2>
+    <details><summary data-i="q1"></summary><p data-i="a1"></p></details>
+    <details><summary data-i="q2"></summary><p data-i="a2"></p></details>
+    <details><summary data-i="q3"></summary><p data-i="a3"></p></details>
+    <details><summary data-i="q4"></summary><p data-i="a4"></p></details>
   </div>
 </section>
 
 <section id="kontakt" class="band">
   <div class="wrap">
-    <h2>Savolingiz bormi?</h2>
-    <p>Davlat va sanani yozing, qaysi hujjatlar kerakligini aytamiz.</p>
+    <h2 data-i="h2k"></h2>
+    <p data-i="pk"></p>
     <div class="cta">
-      <a class="btn" data-tg href="#kontakt">Telegramda yozish</a>
-      <a class="btn alt" data-phone href="#kontakt">Qo'ng'iroq qilish</a>
+      <a class="btn" data-tg data-i="tg" href="#kontakt"></a>
+      <a class="btn alt" data-phone data-i="call" href="#kontakt"></a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">© VisaHub.uz, Toshkent</div></footer>
+<footer><div class="wrap">© VisaHub.uz, <span data-i="city"></span></div></footer>
 
-<a class="fab" data-tg href="#kontakt" aria-label="Telegramda yozish"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
+<a class="fab" data-tg href="#kontakt" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
 
 <script>
   /* ====== SHU YERNI O'ZGARTIRING ====== */
@@ -186,42 +189,127 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
   var PHONE    = "+998918257205";   // Telefon raqam, +998 bilan
   /* ==================================== */
 
-  /* [bayroq kodi, davlat nomi, rasm fayl nomi, rang1, rang2] */
+  var LANGS = ["uz","en","ru","hi"], LN = ["O'zbekcha","English","Русский","हिन्दी"];
+
+  /* Har bir matn: [o'zbek, ingliz, rus, hind] */
+  var T = {
+    title:["VisaHub.uz — viza bo'yicha maslahat va hujjatlar tayyorlash","VisaHub.uz — visa consulting and document preparation","VisaHub.uz — консультации по визам и подготовка документов","VisaHub.uz — वीज़ा सलाह और दस्तावेज़ तैयारी"],
+    city:["Toshkent","Tashkent","Ташкент","ताशकंद"],
+    n1:["Davlatlar","Countries","Страны","देश"],
+    n2:["Ish tartibi","How it works","Как мы работаем","प्रक्रिया"],
+    n3:["Xizmatlar","Services","Услуги","सेवाएँ"],
+    n4:["Savollar","FAQ","Вопросы","सवाल"],
+    tg:["Telegramda yozish","Message on Telegram","Написать в Telegram","टेलीग्राम पर लिखें"],
+    h1:["Viza uchun hujjatlaringizni to'g'ri va to'liq tayyorlaymiz","We prepare your visa documents correctly and completely","Правильно и полностью подготовим документы для визы","आपके वीज़ा दस्तावेज़ सही और पूरे तैयार करते हैं"],
+    lead:["Qaysi hujjat kerakligini, qayerga va qachon topshirishni tushuntiramiz. Anketa, sayohat rejasi va bron hujjatlarini tayyorlashda yordam beramiz.","We explain which documents you need, where and when to apply. We help with the application form, travel itinerary and booking documents.","Объясним, какие документы нужны, куда и когда подавать. Поможем с анкетой, маршрутом поездки и документами о брони.","बताते हैं कि कौन-से दस्तावेज़ चाहिए, कहाँ और कब आवेदन करना है। फ़ॉर्म, यात्रा कार्यक्रम और बुकिंग दस्तावेज़ों में मदद करते हैं।"],
+    cta1:["Bepul maslahat olish","Get a free consultation","Получить бесплатную консультацию","मुफ़्त सलाह लें"],
+    cta2:["Davlatlar ro'yxati","Countries list","Список стран","देशों की सूची"],
+    h2c:["Qaysi davlat vizasi kerak?","Which visa do you need?","Виза в какую страну нужна?","आपको किस देश का वीज़ा चाहिए?"],
+    note1:["Davlatni bosing, Telegramda tayyor xabar ochiladi.","Click a country and a ready message opens in Telegram.","Нажмите на страну, и в Telegram откроется готовое сообщение.","देश पर क्लिक करें, टेलीग्राम में तैयार संदेश खुलेगा।"],
+    note2:["Ro'yxatda yo'q davlat kerak bo'lsa, Telegramda so'rang.","Country not listed? Ask us on Telegram.","Нет вашей страны в списке? Спросите в Telegram.","देश सूची में नहीं है? टेलीग्राम पर पूछें।"],
+    g1:["Shengen hududi","Schengen area","Шенгенская зона","शेंगेन क्षेत्र"],
+    g2:["Osiyo","Asia","Азия","एशिया"],
+    g3:["Amerika","Americas","Америка","अमेरिका महाद्वीप"],
+    g4:["Boshqa yo'nalishlar","Other destinations","Другие направления","अन्य गंतव्य"],
+    sub:["Viza bo'yicha maslahat","Visa consultation","Консультация по визе","वीज़ा सलाह"],
+    msg:["Assalomu alaykum! {n} vizasi bo'yicha maslahat kerak.","Hello! I need a consultation about a {n} visa.","Здравствуйте! Нужна консультация по визе: {n}.","नमस्ते! मुझे {n} वीज़ा के बारे में सलाह चाहिए।"],
+    h2p:["Ish tartibi","How it works","Как мы работаем","काम करने का तरीका"],
+    s1t:["Siz yozasiz","You write to us","Вы пишете нам","आप हमें लिखते हैं"],
+    s1p:["Qaysi davlatga, qachon va nima maqsadda borishingizni aytasiz.","Tell us where, when and why you are travelling.","Сообщаете, куда, когда и с какой целью едете.","आप बताते हैं कि कहाँ, कब और किस उद्देश्य से जा रहे हैं।"],
+    s2t:["Hujjatlar ro'yxati","Document list","Список документов","दस्तावेज़ों की सूची"],
+    s2p:["Sizning holatingizga mos hujjatlar ro'yxatini beramiz.","We give you the document list for your case.","Даём список документов для вашей ситуации.","आपकी स्थिति के अनुसार दस्तावेज़ों की सूची देते हैं।"],
+    s3t:["Tayyorlash","Preparation","Подготовка","तैयारी"],
+    s3p:["Anketa, sayohat rejasi va bron hujjatlarini birga tayyorlaymiz va tekshiramiz.","We prepare and check the form, itinerary and booking documents together.","Вместе готовим и проверяем анкету, маршрут и документы о брони.","फ़ॉर्म, यात्रा कार्यक्रम और बुकिंग दस्तावेज़ साथ मिलकर तैयार करते और जाँचते हैं।"],
+    s4t:["Topshirish","Submission","Подача","आवेदन जमा करना"],
+    s4p:["Topshirish uchun yozilish va keyingi qadamlarni tushuntiramiz.","We explain how to book your appointment and what comes next.","Объясним запись на подачу и дальнейшие шаги.","अपॉइंटमेंट बुक करने और आगे के कदम समझाते हैं।"],
+    h2s:["Nimalarda yordam beramiz","How we can help","Чем мы помогаем","हम किसमें मदद करते हैं"],
+    sv1:["Viza turi va talablar bo'yicha maslahat","Advice on visa type and requirements","Консультация по типу визы и требованиям","वीज़ा के प्रकार और ज़रूरतों पर सलाह"],
+    sv2:["Hujjatlar ro'yxati va ularni tekshirish","Document list and review","Список документов и их проверка","दस्तावेज़ों की सूची और जाँच"],
+    sv3:["Viza anketasini to'ldirish","Filling in the visa application form","Заполнение визовой анкеты","वीज़ा आवेदन फ़ॉर्म भरना"],
+    sv4:["Sayohat rejasi (itinerary) tayyorlash","Travel itinerary preparation","Подготовка маршрута поездки (итинерари)","यात्रा कार्यक्रम (itinerary) तैयार करना"],
+    sv5:["Mehmonxona va transport bron hujjatlari","Hotel and transport booking documents","Документы о брони отелей и транспорта","होटल और परिवहन बुकिंग दस्तावेज़"],
+    sv6:["Topshirish uchun yozilishda yordam","Help booking your submission appointment","Помощь с записью на подачу","आवेदन के लिए अपॉइंटमेंट बुक करने में मदद"],
+    disc:["Viza berish yoki bermaslik haqidagi qaror elchixona va konsullik qo'lida. Biz hujjatlaringiz talabga to'g'ri kelishiga yordam beramiz.","The decision to grant or refuse a visa rests with the embassy or consulate. We help make sure your documents meet the requirements.","Решение о выдаче или отказе в визе принимает посольство или консульство. Мы помогаем, чтобы документы соответствовали требованиям.","वीज़ा देने या न देने का निर्णय दूतावास या वाणिज्य दूतावास का होता है। हम यह सुनिश्चित करने में मदद करते हैं कि आपके दस्तावेज़ आवश्यकताओं के अनुरूप हों।"],
+    h2f:["Ko'p so'raladigan savollar","Frequently asked questions","Частые вопросы","अक्सर पूछे जाने वाले सवाल"],
+    q1:["Xizmat narxi qancha?","How much does the service cost?","Сколько стоит услуга?","सेवा की कीमत कितनी है?"],
+    a1:["Narx davlatga, viza turiga va kerakli hujjatlar hajmiga qarab belgilanadi. Aniq narxni bilish uchun Telegramda yozing.","The price depends on the country, visa type and amount of documents. Message us on Telegram for an exact quote.","Цена зависит от страны, типа визы и объёма документов. Точную стоимость уточняйте в Telegram.","कीमत देश, वीज़ा के प्रकार और दस्तावेज़ों की मात्रा पर निर्भर करती है। सटीक कीमत के लिए टेलीग्राम पर लिखें।"],
+    q2:["Hujjatlar qancha vaqtda tayyor bo'ladi?","How long does it take to prepare the documents?","Сколько времени занимает подготовка документов?","दस्तावेज़ तैयार होने में कितना समय लगता है?"],
+    a2:["Hujjatlar to'liq berilgan bo'lsa, odatda bir necha kun ichida. Muddat davlat va holatga qarab farq qiladi.","If you provide all documents, usually a few days. The time varies by country and case.","Если вы предоставили все документы, обычно несколько дней. Срок зависит от страны и ситуации.","यदि आप सभी दस्तावेज़ दे दें, तो आमतौर पर कुछ दिन। समय देश और स्थिति के अनुसार बदलता है।"],
+    q3:["Viza berilishiga kafolat bormi?","Is a visa guaranteed?","Есть ли гарантия получения визы?","क्या वीज़ा की गारंटी है?"],
+    a3:["Yo'q. Qaror elchixona tomonidan qabul qilinadi. Hech kim vizani kafolatlay olmaydi. Biz hujjatlarni to'g'ri tayyorlashga yordam beramiz.","No. The decision is made by the embassy and nobody can guarantee a visa. We help you prepare documents correctly.","Нет. Решение принимает посольство, и никто не может гарантировать визу. Мы помогаем правильно подготовить документы.","नहीं। निर्णय दूतावास लेता है और कोई भी वीज़ा की गारंटी नहीं दे सकता। हम दस्तावेज़ सही तैयार करने में मदद करते हैं।"],
+    q4:["Boshqa shahardan ham murojaat qilsam bo'ladimi?","Can I contact you from another city?","Можно ли обратиться из другого города?","क्या मैं दूसरे शहर से संपर्क कर सकता/सकती हूँ?"],
+    a4:["Ha, aloqa Telegram orqali bo'lgani uchun istalgan joydan yozishingiz mumkin.","Yes, we work through Telegram, so you can write from anywhere.","Да, связь идёт через Telegram, поэтому писать можно откуда угодно.","हाँ, बातचीत टेलीग्राम से होती है, इसलिए आप कहीं से भी लिख सकते हैं।"],
+    h2k:["Savolingiz bormi?","Have a question?","Остались вопросы?","कोई सवाल है?"],
+    pk:["Davlat va sanani yozing, qaysi hujjatlar kerakligini aytamiz.","Tell us the country and date and we will tell you which documents you need.","Напишите страну и дату, и мы подскажем, какие документы нужны.","देश और तारीख़ लिखें, हम बताएँगे कि कौन-से दस्तावेज़ चाहिए।"],
+    call:["Qo'ng'iroq qilish","Call us","Позвонить","कॉल करें"]
+  };
+
+  /* Davlatlar: [bayroq kodi, rang1, rang2], nomlari NAMES ichida shu tartibda */
   var GROUPS = [
-    ["Shengen hududi", [
-      ["hu","Vengriya","#3f6f4a","#a8222e"],["es","Ispaniya","#aa151b","#b8860b"],
-      ["lt","Litva","#006a44","#b8860b"],["pl","Polsha","#c0152f","#7d1a2b"],
-      ["gr","Gretsiya","#0d5eaf","#4b86c9"],["be","Belgiya","#2b2b2b","#c8102e"]]],
-    ["Osiyo", [
-      ["sg","Singapur","#d3202f","#8f1a24"],["jp","Yaponiya","#bc002d","#7a1230"],
-      ["vn","Vetnam","#c91f17","#8f1a14"],["cn","Xitoy","#c8260f","#8f1a0a"],
-      ["hk","Gonkong","#c8260f","#9b1a12"],["in","Hindiston","#c9731a","#138808"]]],
-    ["Amerika", [
-      ["us","AQSh","#b22234","#3c3b6e"],["br","Braziliya","#0a8a3a","#b8960b"]]],
-    ["Boshqa yo'nalishlar", [
-      ["au","Avstraliya","#012169","#c8102e"],["tr","Turkiya","#d00a17","#8c0710"],
-      ["ma","Marokash","#b3252a","#006233"],["tz","Tanzaniya","#1a9a33","#0b7fb0"],
-      ["mg","Madagaskar","#c8102e","#007e3a"]]]
+    ["g1", [["hu","#3f6f4a","#a8222e"],["es","#aa151b","#b8860b"],["lt","#006a44","#b8860b"],["pl","#c0152f","#7d1a2b"],["gr","#0d5eaf","#4b86c9"],["be","#2b2b2b","#c8102e"]]],
+    ["g2", [["sg","#d3202f","#8f1a24"],["jp","#bc002d","#7a1230"],["vn","#c91f17","#8f1a14"],["cn","#c8260f","#8f1a0a"],["hk","#c8260f","#9b1a12"],["in","#c9731a","#138808"]]],
+    ["g3", [["us","#b22234","#3c3b6e"],["br","#0a8a3a","#b8960b"]]],
+    ["g4", [["au","#012169","#c8102e"],["tr","#d00a17","#8c0710"],["ma","#b3252a","#006233"],["tz","#1a9a33","#0b7fb0"],["mg","#c8102e","#007e3a"]]]
+  ];
+  var NAMES = [
+    ["Vengriya","Ispaniya","Litva","Polsha","Gretsiya","Belgiya","Singapur","Yaponiya","Vetnam","Xitoy","Gonkong","Hindiston","AQSh","Braziliya","Avstraliya","Turkiya","Marokash","Tanzaniya","Madagaskar"],
+    ["Hungary","Spain","Lithuania","Poland","Greece","Belgium","Singapore","Japan","Vietnam","China","Hong Kong","India","USA","Brazil","Australia","Turkey","Morocco","Tanzania","Madagascar"],
+    ["Венгрия","Испания","Литва","Польша","Греция","Бельгия","Сингапур","Япония","Вьетнам","Китай","Гонконг","Индия","США","Бразилия","Австралия","Турция","Марокко","Танзания","Мадагаскар"],
+    ["हंगरी","स्पेन","लिथुआनिया","पोलैंड","ग्रीस","बेल्जियम","सिंगापुर","जापान","वियतनाम","चीन","हॉन्ग कॉन्ग","भारत","अमेरिका (USA)","ब्राज़ील","ऑस्ट्रेलिया","तुर्की","मोरक्को","तंज़ानिया","मेडागास्कर"]
   ];
 
-  var html = "";
-  GROUPS.forEach(function(g){
-    html += '<div class="group"><h3>' + g[0] + '</h3><div class="cards">';
-    g[1].forEach(function(c){
-      var msg = encodeURIComponent("Assalomu alaykum! " + c[1] + " vizasi bo'yicha maslahat kerak.");
-      html += '<a class="card" target="_blank" rel="noopener" style="--c1:' + c[2] + ';--c2:' + c[3] + '" href="https://t.me/' + TELEGRAM + '?text=' + msg + '">' +
-        '<img class="bg" src="images1/' + c[0] + '.jpg" alt="" loading="lazy" onerror="this.remove()">' +
-        '<img class="flag" src="https://flagcdn.com/w80/' + c[0] + '.png" alt="" onerror="this.remove()">' +
-        '<div class="meta"><h3>' + c[1] + '</h3><span>Viza bo\'yicha maslahat</span></div><span class="go">›</span></a>';
-    });
-    html += '</div></div>';
-  });
-  document.getElementById("groups").innerHTML = html;
+  var lang = 0;
+  function t(k){ return T[k][lang]; }
 
-  document.querySelectorAll("[data-tg]").forEach(function(a){
-    a.href = "https://t.me/" + TELEGRAM; a.target = "_blank"; a.rel = "noopener";
-  });
+  function renderCards(){
+    var html = "", idx = 0;
+    GROUPS.forEach(function(g){
+      html += '<div class="group"><h3>' + t(g[0]) + '</h3><div class="cards">';
+      g[1].forEach(function(c){
+        var name = NAMES[lang][idx++];
+        var msg = encodeURIComponent(t("msg").replace("{n}", name));
+        html += '<a class="card" target="_blank" rel="noopener" style="--c1:' + c[1] + ';--c2:' + c[2] + '" href="https://t.me/' + TELEGRAM + '?text=' + msg + '">' +
+          '<img class="bg" loading="lazy" alt="" data-b="images1/' + c[0] + '">' +
+          '<img class="flag" alt="" data-c="' + c[0] + '">' +
+          '<div class="meta"><h3>' + name + '</h3><span>' + t("sub") + '</span></div><span class="go">›</span></a>';
+      });
+      html += '</div></div>';
+    });
+    document.getElementById("groups").innerHTML = html;
+
+    /* Rasm: .jpg, topilmasa .jpeg, .png, .webp; hech biri bo'lmasa gradient qoladi */
+    document.querySelectorAll(".card .bg").forEach(function(img){
+      var ex = ["jpeg","png","webp"], i = 0, base = img.dataset.b;
+      img.onerror = function(){ if (i < ex.length) { img.src = base + "." + ex[i++]; } else { img.remove(); } };
+      img.src = base + ".jpg";
+    });
+    /* Bayroq: 1-manba ishlamasa 2-manba, u ham bo'lmasa davlat kodi yoziladi */
+    document.querySelectorAll(".card .flag").forEach(function(img){
+      var cc = img.dataset.c, n = 0;
+      img.onerror = function(){
+        if (n++ === 0) { img.src = "https://flagsapi.com/" + cc.toUpperCase() + "/flat/64.png"; }
+        else { var sp = document.createElement("span"); sp.className = "flag code"; sp.textContent = cc.toUpperCase(); img.replaceWith(sp); }
+      };
+      img.src = "https://flagcdn.com/w80/" + cc + ".png";
+    });
+  }
+
+  function apply(){
+    document.documentElement.lang = LANGS[lang];
+    document.title = t("title");
+    document.querySelectorAll("[data-i]").forEach(function(el){ el.textContent = t(el.dataset.i); });
+    renderCards();
+  }
+
+  var sel = document.getElementById("lang");
+  LN.forEach(function(n, i){ var o = document.createElement("option"); o.value = i; o.textContent = n; sel.appendChild(o); });
+
+  sel.value = lang;
+  sel.onchange = function(){ lang = +sel.value; apply(); };
+
+  document.querySelectorAll("[data-tg]").forEach(function(a){ a.href = "https://t.me/" + TELEGRAM; a.target = "_blank"; a.rel = "noopener"; });
   document.querySelectorAll("[data-phone]").forEach(function(a){ a.href = "tel:" + PHONE; });
+  apply();
 </script>
 </body>
 </html>

@@ -2,78 +2,94 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>VisaHub.uz — viza bo'yicha maslahat va hujjatlar tayyorlash</title>
 <meta name="description" content="Shengen, Yaponiya, Singapur, Turkiya va boshqa davlatlar vizasi: hujjatlar ro'yxati, anketa, sayohat rejasi va topshirishda yordam. Toshkent.">
 <style>
-:root{
-  --ink:#12263f; --paper:#f3f7f5; --white:#fff; --stamp:#b8322f; --muted:#4a5866; --line:#cfdad5; --accent:#1d5c4a;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark){
-  :root{ --ink:#e8eef5; --paper:#0f1a24; --white:#16232f; --stamp:#e5625e; --muted:#a6b4c2; --line:#2a3b49; --accent:#6fcfb0; color-scheme: dark; }
-}
+:root{--ink:#12263f;--paper:#f3f7f5;--white:#fff;--stamp:#b8322f;--muted:#4a5866;--line:#cfdad5;--accent:#1d5c4a;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--ink:#e8eef5;--paper:#0f1a24;--white:#16232f;--stamp:#e5625e;--muted:#a6b4c2;--line:#2a3b49;--accent:#6fcfb0;color-scheme:dark}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.2;margin:0 0 .5em}
 h1{font-size:clamp(2rem,6vw,3.4rem);letter-spacing:-.01em}
 h2{font-size:clamp(1.5rem,4vw,2.1rem)}
-h3{font-size:1.15rem}
 p{margin:0 0 1em}
 a{color:inherit}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 section{padding:56px 0;border-top:1px solid var(--line)}
 :focus-visible{outline:3px solid var(--stamp);outline-offset:3px}
 
-header{padding:14px 0}
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 0}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{font-family:Georgia,serif;font-weight:700;font-size:1.25rem;text-decoration:none}
-.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:600}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600}
 .btn:hover{opacity:.88}
 .btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
 
-.hero{padding:48px 0 64px;border-top:0}
-.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+.hero{position:relative;padding:56px 0 72px;border-top:0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='48'%3E%3Cpath d='M0 24Q30 0 60 24T120 24M0 36Q30 12 60 36T120 36M0 12Q30 -12 60 12T120 12' fill='none' stroke='%2362a08c' stroke-width='1' opacity='.35'/%3E%3C/svg%3E");-webkit-mask-image:linear-gradient(#000 20%,transparent 95%);mask-image:linear-gradient(#000 20%,transparent 95%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
 .hero p.lead{font-size:1.15rem;color:var(--muted);max-width:34em}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-.stamp{justify-self:center;width:230px;height:230px;border:5px double var(--stamp);border-radius:50%;color:var(--stamp);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-9deg);font-family:Georgia,serif;opacity:.92}
-.stamp b{font-size:1.7rem;letter-spacing:.02em}
+.stamp{justify-self:center;width:230px;height:230px;border:5px double var(--stamp);border-radius:50%;color:var(--stamp);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-9deg);font-family:Georgia,serif;background:var(--paper)}
+.stamp b{font-size:1.7rem}
 .stamp span{font-size:.95rem;border-top:2px solid var(--stamp);border-bottom:2px solid var(--stamp);margin:6px 0;padding:3px 14px}
 .stamp small{font-size:.85rem}
 
-.group{margin-bottom:22px}
-.group h3{color:var(--accent);margin-bottom:.4em}
-.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
-.chips li{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:6px 16px}
+.group{margin-top:30px}
+.group h3{color:var(--accent);margin-bottom:.6em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:190px;border-radius:16px;overflow:hidden;color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 1px 2px rgba(0,0,0,.15);transition:transform .2s,box-shadow .2s}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.05) 65%)}
+.card .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.25)}
+.card:hover .bg{transform:scale(1.06)}
+.card .flag{position:absolute;z-index:2;top:14px;left:14px;width:38px;height:26px;object-fit:cover;border-radius:4px;box-shadow:0 0 0 2px rgba(255,255,255,.85)}
+.card .meta{position:relative;z-index:2;padding:16px}
+.card h3{color:#fff;margin:0;font-size:1.3rem}
+.card .meta span{font-size:.88rem;opacity:.9}
+.card .go{position:absolute;z-index:2;right:14px;bottom:14px;width:34px;height:34px;border-radius:50%;background:#fff;color:#12263f;display:flex;align-items:center;justify-content:center;font-size:1.3rem;line-height:1}
 .note{color:var(--muted);font-size:.95rem}
 
 .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;counter-reset:s}
-.steps li{counter-increment:s;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:20px}
+.steps li{counter-increment:s;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px}
 .steps li::before{content:counter(s);display:block;font-family:Georgia,serif;font-size:2rem;color:var(--stamp);line-height:1;margin-bottom:8px}
-.steps h3{margin-bottom:.3em}
+.steps h3{font-size:1.15rem;margin-bottom:.3em}
 .steps p{margin:0;color:var(--muted);font-size:.97rem}
 
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px;padding:0;margin:0;list-style:none}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 32px;padding:0;margin:0;list-style:none}
 .services li{padding:12px 0 12px 26px;border-bottom:1px solid var(--line);position:relative}
 .services li::before{content:"";position:absolute;left:0;top:21px;width:12px;height:7px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg)}
 
-details{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:10px}
+details{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
 summary{cursor:pointer;font-weight:600}
 details p{margin:10px 0 0;color:var(--muted)}
 
-.contact{text-align:center}
-.contact p{max-width:34em;margin-left:auto;margin-right:auto;color:var(--muted)}
-.contact .cta{justify-content:center}
-footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.9rem}
+.band{border-top:0;background:linear-gradient(135deg,#0f3d4a,#1d5c4a);color:#fff;text-align:center}
+.band h2{color:#fff}
+.band p{max-width:34em;margin:0 auto 1em;color:#d6e8e1}
+.band .cta{justify-content:center}
+.band .btn{background:#fff;color:#12263f}
+.band .btn.alt{background:transparent;color:#fff;border-color:#fff}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+.fab{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:30;width:56px;height:56px;border-radius:50%;background:#2a9ad6;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.fab svg{width:28px;height:28px;fill:#fff}
 
 @media (max-width:720px){
+  nav{display:none}
   .hero .wrap{grid-template-columns:1fr}
-  .stamp{width:170px;height:170px;order:-1;justify-self:start}
-  .stamp b{font-size:1.25rem}
+  .stamp{width:160px;height:160px;order:-1;justify-self:start}
+  .stamp b{font-size:1.2rem}
   section{padding:40px 0}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .card{min-height:170px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.card .bg{transition:none}.card:hover{transform:none}.card:hover .bg{transform:none}}
 </style>
 </head>
 <body>
@@ -81,6 +97,7 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;color:v
 <header>
   <div class="wrap">
     <a class="logo" href="#">VisaHub.uz</a>
+    <nav><a href="#davlatlar">Davlatlar</a><a href="#jarayon">Ish tartibi</a><a href="#xizmatlar">Xizmatlar</a><a href="#savollar">Savollar</a></nav>
     <a class="btn" data-tg href="#kontakt">Telegramda yozish</a>
   </div>
 </header>
@@ -96,36 +113,16 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;color:v
         <a class="btn alt" href="#davlatlar">Davlatlar ro'yxati</a>
       </div>
     </div>
-    <div class="stamp" aria-hidden="true">
-      <small>TOSHKENT</small>
-      <span>VISA</span>
-      <b>VisaHub.uz</b>
-    </div>
+    <div class="stamp" aria-hidden="true"><small>TOSHKENT</small><span>VISA</span><b>VisaHub.uz</b></div>
   </div>
 </section>
 
 <section id="davlatlar">
   <div class="wrap">
-    <h2>Qaysi davlatlar bo'yicha yordam beramiz</h2>
-    <div class="group">
-      <h3>Shengen hududi</h3>
-      <ul class="chips">
-        <li>Vengriya</li><li>Ispaniya</li><li>Litva</li><li>Polsha</li><li>Gretsiya</li><li>Belgiya</li><li>Boshqa Shengen davlatlari</li>
-      </ul>
-    </div>
-    <div class="group">
-      <h3>Osiyo</h3>
-      <ul class="chips">
-        <li>Singapur</li><li>Yaponiya</li><li>Vetnam</li><li>Xitoy</li><li>Gonkong</li><li>Hindiston</li>
-      </ul>
-    </div>
-    <div class="group">
-      <h3>Boshqa yo'nalishlar</h3>
-      <ul class="chips">
-        <li>Turkiya</li><li>Marokash</li><li>Tanzaniya</li>
-      </ul>
-    </div>
-    <p class="note">Ro'yxatda yo'q davlat kerak bo'lsa, Telegramda so'rang.</p>
+    <h2>Qaysi davlat vizasi kerak?</h2>
+    <p class="note">Davlatni bosing, Telegramda tayyor xabar ochiladi.</p>
+    <div id="groups"></div>
+    <p class="note" style="margin-top:22px">Ro'yxatda yo'q davlat kerak bo'lsa, Telegramda so'rang.</p>
   </div>
 </section>
 
@@ -159,26 +156,15 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;color:v
 <section id="savollar">
   <div class="wrap">
     <h2>Ko'p so'raladigan savollar</h2>
-    <details>
-      <summary>Xizmat narxi qancha?</summary>
-      <p>Narx davlatga, viza turiga va kerakli hujjatlar hajmiga qarab belgilanadi. Aniq narxni bilish uchun Telegramda yozing.</p>
-    </details>
-    <details>
-      <summary>Hujjatlar qancha vaqtda tayyor bo'ladi?</summary>
-      <p>Hujjatlar to'liq berilgan bo'lsa, odatda bir necha kun ichida. Muddat davlat va holatga qarab farq qiladi.</p>
-    </details>
-    <details>
-      <summary>Viza berilishiga kafolat bormi?</summary>
-      <p>Yo'q. Qaror elchixona tomonidan qabul qilinadi. Hech kim vizani kafolatlay olmaydi. Biz hujjatlarni to'g'ri tayyorlashga yordam beramiz.</p>
-    </details>
-    <details>
-      <summary>Boshlash uchun nima kerak?</summary>
-      <p>Qaysi davlatga borishingiz, taxminiy sana va pasportingiz amal qilish muddati haqidagi ma'lumot yetarli.</p>
-    </details>
+    <details><summary>Maslahat pulikmi?</summary><p>Dastlabki savollaringizga Telegramda javob beramiz. Xizmat narxi davlatga va hujjatlar hajmiga qarab belgilanadi.</p></details>
+    <details><summary>Xizmat narxi qancha?</summary><p>Narx davlatga, viza turiga va kerakli hujjatlar hajmiga qarab belgilanadi. Aniq narxni bilish uchun Telegramda yozing.</p></details>
+    <details><summary>Hujjatlar qancha vaqtda tayyor bo'ladi?</summary><p>Hujjatlar to'liq berilgan bo'lsa, odatda bir necha kun ichida. Muddat davlat va holatga qarab farq qiladi.</p></details>
+    <details><summary>Viza berilishiga kafolat bormi?</summary><p>Yo'q. Qaror elchixona tomonidan qabul qilinadi. Hech kim vizani kafolatlay olmaydi. Biz hujjatlarni to'g'ri tayyorlashga yordam beramiz.</p></details>
+    <details><summary>Boshqa shahardan ham murojaat qilsam bo'ladimi?</summary><p>Ha, aloqa Telegram orqali bo'lgani uchun istalgan joydan yozishingiz mumkin.</p></details>
   </div>
 </section>
 
-<section id="kontakt" class="contact">
+<section id="kontakt" class="band">
   <div class="wrap">
     <h2>Savolingiz bormi?</h2>
     <p>Davlat va sanani yozing, qaysi hujjatlar kerakligini aytamiz.</p>
@@ -190,23 +176,52 @@ footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;color:v
 </section>
 </main>
 
-<footer>
-  <div class="wrap">© VisaHub.uz, Toshkent</div>
-</footer>
+<footer><div class="wrap">© VisaHub.uz, Toshkent</div></footer>
+
+<a class="fab" data-tg href="#kontakt" aria-label="Telegramda yozish"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
 
 <script>
   /* ====== SHU YERNI O'ZGARTIRING ====== */
-  var TELEGRAM = "ostonov_uz";        // Telegram username, @ belgisisiz. Masalan: "visahub_uz"
-  var PHONE    = "+998918257205";   // Telefon raqamingiz, +998 bilan
+  var TELEGRAM = "ostonov_uz";      // Telegram username, @ belgisisiz
+  var PHONE    = "+998918257205";   // Telefon raqam, +998 bilan
   /* ==================================== */
 
+  /* [bayroq kodi, davlat nomi, rasm fayl nomi, rang1, rang2] */
+  var GROUPS = [
+    ["Shengen hududi", [
+      ["hu","Vengriya","#3f6f4a","#a8222e"],["es","Ispaniya","#aa151b","#b8860b"],
+      ["lt","Litva","#006a44","#b8860b"],["pl","Polsha","#c0152f","#7d1a2b"],
+      ["gr","Gretsiya","#0d5eaf","#4b86c9"],["be","Belgiya","#2b2b2b","#c8102e"]]],
+    ["Osiyo", [
+      ["sg","Singapur","#d3202f","#8f1a24"],["jp","Yaponiya","#bc002d","#7a1230"],
+      ["vn","Vetnam","#c91f17","#8f1a14"],["cn","Xitoy","#c8260f","#8f1a0a"],
+      ["hk","Gonkong","#c8260f","#9b1a12"],["in","Hindiston","#c9731a","#138808"]]],
+    ["Amerika", [
+      ["us","AQSh","#b22234","#3c3b6e"],["br","Braziliya","#0a8a3a","#b8960b"]]],
+    ["Boshqa yo'nalishlar", [
+      ["au","Avstraliya","#012169","#c8102e"],["tr","Turkiya","#d00a17","#8c0710"],
+      ["ma","Marokash","#b3252a","#006233"],["tz","Tanzaniya","#1a9a33","#0b7fb0"],
+      ["mg","Madagaskar","#c8102e","#007e3a"]]]
+  ];
+
+  var html = "";
+  GROUPS.forEach(function(g){
+    html += '<div class="group"><h3>' + g[0] + '</h3><div class="cards">';
+    g[1].forEach(function(c){
+      var msg = encodeURIComponent("Assalomu alaykum! " + c[1] + " vizasi bo'yicha maslahat kerak.");
+      html += '<a class="card" target="_blank" rel="noopener" style="--c1:' + c[2] + ';--c2:' + c[3] + '" href="https://t.me/' + TELEGRAM + '?text=' + msg + '">' +
+        '<img class="bg" src="images1/' + c[0] + '.jpg" alt="" loading="lazy" onerror="this.remove()">' +
+        '<img class="flag" src="https://flagcdn.com/w80/' + c[0] + '.png" alt="" onerror="this.remove()">' +
+        '<div class="meta"><h3>' + c[1] + '</h3><span>Viza bo\'yicha maslahat</span></div><span class="go">›</span></a>';
+    });
+    html += '</div></div>';
+  });
+  document.getElementById("groups").innerHTML = html;
+
   document.querySelectorAll("[data-tg]").forEach(function(a){
-    a.href = "https://t.me/" + TELEGRAM;
-    a.target = "_blank"; a.rel = "noopener";
+    a.href = "https://t.me/" + TELEGRAM; a.target = "_blank"; a.rel = "noopener";
   });
-  document.querySelectorAll("[data-phone]").forEach(function(a){
-    a.href = "tel:" + PHONE;
-  });
+  document.querySelectorAll("[data-phone]").forEach(function(a){ a.href = "tel:" + PHONE; });
 </script>
 </body>
 </html>
